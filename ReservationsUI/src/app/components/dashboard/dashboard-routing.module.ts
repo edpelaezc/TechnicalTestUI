@@ -5,6 +5,7 @@ import { CreateComponent } from './reservations/create/create.component';
 import { ListComponent } from './reservations/list/list.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'reservations', pathMatch: 'full' },
   { path: '', component: LayoutComponent,
     children: [
       { path: 'reservations', component: ListComponent },
