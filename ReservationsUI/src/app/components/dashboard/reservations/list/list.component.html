@@ -1,10 +1,32 @@
 <nav class="navbar navbar-light bg-light justify-content-between">
     <div class="container">
         <a class="navbar-brand title">Reservations list</a>
-        <button class="btn btn-secondary" routerLink="/reservations/create">CREATE RESERVATION</button>        
+        <button class="btn btn-secondary" routerLink="/reservations/create">CREATE RESERVATION</button>
     </div>
 </nav>
 
 <div class="container mb-5" id="content">
-asdf    
+    <div class="table-responsive listTable">
+        <table id="dtBasicExample" class="table table-bordered" style="margin-top: 1%;">
+            <thead>
+                <tr>
+                    <th>Reservation name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reservation of reservations">
+                    <td>{{ reservation.userName }}</td>
+                    <td><button class="btn btn-secondary" (click)="edit(reservation.id)">EDIT</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#dtBasicExample').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+    });
+</script>

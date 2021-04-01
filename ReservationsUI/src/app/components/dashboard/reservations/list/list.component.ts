@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ListComponent implements OnInit {
 
   constructor() { }
+  reservations = [] as any;
 
   ngOnInit(): void {
   }
 
+  edit(id:string) {}
+
 }
+
