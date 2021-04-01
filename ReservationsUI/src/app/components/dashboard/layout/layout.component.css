@@ -4,9 +4,7 @@
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    margin-top: 5%;    
     width: 100%;
     background-color: #F8F8F8;
 }

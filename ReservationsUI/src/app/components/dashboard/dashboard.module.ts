@@ -6,6 +6,7 @@ import { ListComponent } from './reservations/list/list.component';
 import { NgxEditorModule } from "ngx-editor";
 import { CreateComponent } from './reservations/create/create.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     DashboardRoutingModule,
     NgxEditorModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }

@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -10,6 +10,19 @@ import { environment } from 'src/environments/environment';
 export class ReservationsService {
 
   constructor(private httpClient: HttpClient) { }
+
+  handleError(error: HttpErrorResponse) {
+    let errorMessage = 'Unknown error!';
+    if (error.error instanceof ErrorEvent) {
+      // Client-side errors
+      errorMessage = `Error: ${error.error.message}`;
+    } else {
+      // Server-side errors
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+
+    return throwError(errorMessage);
+  }
 
   getReservationsList(): Observable<any> {
     return this.httpClient.get(`${environment.apiURL}/reservations`).pipe(
@@ -22,5 +35,9 @@ export class ReservationsService {
         }
       })
     );
+  }
+
+  postReservation(reservation: any): Observable<any> {    
+    return this.httpClient.post(environment.apiURL + '/reservations', JSON.stringify(reservation), { headers: new HttpHeaders({ 'Content-Type': 'application/json' })}).pipe(catchError(this.handleError));
   }
 }
