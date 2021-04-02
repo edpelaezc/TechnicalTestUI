@@ -6,7 +6,7 @@
 </nav>
 
 <form [formGroup]="form">
-    <div class="container" id="content">
+    <div class="container text-center" id="content">
         <br>
         <div class="row">
             <div class="form-group col-sm">
@@ -27,6 +27,9 @@
             <div class="form-group col-sm">
                 <input type="date" formControlName="BirthDate" class="form-control" id="birthDate"
                     placeholder="Birth date" required>
+            </div>
+            <div class="form-group col-sm">
+                <button class="btn btn-secondary" routerLink="/contacts/list" i18n="@@reservationButton">CONTACTS LIST</button>
             </div>
         </div>
     </div>

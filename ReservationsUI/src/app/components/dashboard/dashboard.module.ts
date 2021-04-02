@@ -8,10 +8,14 @@ import { CreateComponent } from './reservations/create/create.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
+import { ContactsEditComponent } from './contacts/edit/edit.component';
+import { DeleteComponent } from './contacts/delete/delete.component';
+import { ContactsCreateComponent } from "./contacts/create/create.component";
+import { ContactsListComponent } from "./contacts/list/list.component";
 
 
 @NgModule({
-  declarations: [LayoutComponent, ListComponent, CreateComponent],
+  declarations: [LayoutComponent, ListComponent, CreateComponent, ContactsEditComponent, DeleteComponent, ContactsCreateComponent, ContactsListComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
