@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light bg-light justify-content-between">
     <div class="container">
-        <a class="navbar-brand title">Create Reservation</a>
-        <button class="btn btn-secondary" routerLink="/reservations">RESERVATION LIST</button>
+        <a class="navbar-brand title" i18n="@@createHeader">Create Reservation</a>
+        <button class="btn btn-secondary" routerLink="/reservations" i18n="@@reservationButton">RESERVATION LIST</button>
     </div>
 </nav>
 
@@ -38,6 +38,6 @@
         </div>
         <br>
         <button (click)="createReservation()" style="margin-top: 10px;"
-            class="btn btn-danger float-right send">SEND</button>
+            class="btn btn-danger float-right send" i18n="@@sendReservationButton">SEND</button>
     </div>
 </form>

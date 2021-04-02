@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReservationsService } from "../../../../services/reservations/reservations.service";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-list',
@@ -8,7 +9,7 @@ import { ReservationsService } from "../../../../services/reservations/reservati
 })
 export class ListComponent implements OnInit {
 
-  constructor(private api: ReservationsService) { }
+  constructor(private api: ReservationsService, private http: HttpClient) { }
   
   reservations:any = [];
 

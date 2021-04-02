@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="createHeader" datatype="html">
+        <source>Create Reservation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/create/create.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reservationButton" datatype="html">
+        <source>RESERVATION LIST</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/create/create.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sendReservationButton" datatype="html">
+        <source>SEND</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/create/create.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="listHeader" datatype="html">
+        <source>Reservations list</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/list/list.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="createReservationButton" datatype="html">
+        <source>CREATE RESERVATION</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/list/list.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reservationTableTitle" datatype="html">
+        <source>Reservation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/list/list.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="tableLabel" datatype="html">
+        <source>Reservation for: <x id="INTERPOLATION" equiv-text="{{ reservation.userName }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/list/list.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="editReservationButton" datatype="html">
+        <source>EDIT</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/list/list.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

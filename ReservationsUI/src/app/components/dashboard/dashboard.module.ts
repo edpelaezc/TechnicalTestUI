@@ -7,6 +7,7 @@ import { NgxEditorModule } from "ngx-editor";
 import { CreateComponent } from './reservations/create/create.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardRoutingModule,
     NgxEditorModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DataTablesModule
   ]
 })
 export class DashboardModule { }

@@ -4,6 +4,15 @@
   "newProjectRoot": "projects",
   "projects": {
     "ReservationsUI": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es": {
+            "translation": "src/locale/messages.es.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -29,9 +38,13 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -60,6 +73,11 @@
                   "maximumError": "4kb"
                 }
               ]
+            },
+            "es": {
+              "localize": ["es"],
+              "outputPath": "dist/under-construction-fr/",
+              "i18nMissingTranslation": "error"
             }
           }
         },
@@ -71,6 +89,9 @@
           "configurations": {
             "production": {
               "browserTarget": "ReservationsUI:build:production"
+            },
+            "es": {
+              "browserTarget": "ReservationsUI:build:es"
             }
           }
         },
