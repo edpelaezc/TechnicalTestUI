@@ -10,13 +10,15 @@
         <table id="dtBasicExample" class="table table-bordered" style="margin-top: 1%;">
             <thead>
                 <tr>
-                    <th>Reservation name</th>
+                    <th>#</th>
+                    <th>Reservation</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let reservation of reservations">
-                    <td>{{ reservation.userName }}</td>
+                    <td>{{reservation.id}}</td>
+                    <td>Reservation for: {{ reservation.userName }}</td>
                     <td><button class="btn btn-secondary" (click)="edit(reservation.id)">EDIT</button></td>
                 </tr>
             </tbody>

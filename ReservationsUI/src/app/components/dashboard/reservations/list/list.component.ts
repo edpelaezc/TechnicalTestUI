@@ -13,12 +13,12 @@ export class ListComponent implements OnInit {
   reservations:any = [];
 
   ngOnInit(): void {
-    this.getReservations();
-    console.log(this.reservations);
+    this.getReservations();    
   }
 
   edit(id:string) {}
 
+  // gets the reservations list to use in page load
   getReservations() {
     this.api.getReservationsList().subscribe( res => {
       if (res.error) {
