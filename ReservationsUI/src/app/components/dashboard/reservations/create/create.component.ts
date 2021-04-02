@@ -13,9 +13,10 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   form: FormGroup;
   editor: Editor;
+  contactTypes: any = [];
   html: '';
 
-  constructor(private fb: FormBuilder, private reservationsService: ReservationsService, private router: Router) {
+  constructor(private fb: FormBuilder, private api: ReservationsService, private router: Router) {
     this.form = this.fb.group({
       ContactName: ['', [Validators.required]],
       ContactType: ['', [Validators.required]],
@@ -26,6 +27,7 @@ export class CreateComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.getTypes();
     this.editor = new Editor();
   }
 
@@ -33,7 +35,20 @@ export class CreateComponent implements OnInit, OnDestroy {
     this.editor.destroy();
   }
 
-  createReservation() {    
+  getTypes() {
+    this.api.getContactTypes().subscribe(res => {
+      if (res.error) {
+        alert('error');
+      }
+      else {
+        for (let index = 0; index < res.length; index++) {
+          this.contactTypes.push(res[index]);
+        }
+      }
+    });
+  }
+
+  createReservation() {
     let reservation = {
       ContactName: this.form.controls.ContactName.value,
       ContactType: this.form.controls.ContactType.value,
@@ -41,12 +56,12 @@ export class CreateComponent implements OnInit, OnDestroy {
       BirthDate: this.form.controls.BirthDate.value,
       editorContent: this.form.controls.editorContent.value
     };
-    
-    this.reservationsService.postReservation(reservation).subscribe(
+
+    this.api.postReservation(reservation).subscribe(
       data => { alert('Sucessfully created') },
       err => { console.log(err) }
     );
 
-    this.router.navigateByUrl('reservations');  
+    this.router.navigateByUrl('reservations');
   }
 }

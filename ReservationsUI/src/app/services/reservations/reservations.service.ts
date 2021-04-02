@@ -37,6 +37,19 @@ export class ReservationsService {
     );
   }
 
+  getContactTypes(): Observable<any> {
+    return this.httpClient.get(`${environment.apiURL}/ContactTypes`).pipe(
+      tap(res => {
+        if (res) {
+          return res; 
+        } 
+        else {
+          return { error: 'error'}
+        }
+      })
+    );
+  }
+
   postReservation(reservation: any): Observable<any> {    
     return this.httpClient.post(environment.apiURL + '/reservations', JSON.stringify(reservation), { headers: new HttpHeaders({ 'Content-Type': 'application/json' })}).pipe(catchError(this.handleError));
   }

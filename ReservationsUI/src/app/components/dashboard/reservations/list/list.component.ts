@@ -8,7 +8,7 @@ import { ReservationsService } from "../../../../services/reservations/reservati
 })
 export class ListComponent implements OnInit {
 
-  constructor(private reservationsService: ReservationsService) { }
+  constructor(private api: ReservationsService) { }
   
   reservations:any = [];
 
@@ -20,7 +20,7 @@ export class ListComponent implements OnInit {
   edit(id:string) {}
 
   getReservations() {
-    this.reservationsService.getReservationsList().subscribe( res => {
+    this.api.getReservationsList().subscribe( res => {
       if (res.error) {
         alert('error');
       }
