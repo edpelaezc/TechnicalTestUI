@@ -1,1 +1,34 @@
-<p>create works!</p>
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <div class="container">
+        <a class="navbar-brand title" i18n="@@contactsHeader">Create Contact</a>
+        <button class="btn btn-secondary" routerLink="/contacts/list" i18n="@@CONTACTSLISTButton">CONTACTS LIST</button>
+    </div>
+</nav>
+
+<form [formGroup]="form">
+    <div class="container mb-5" id="content">
+        <br>
+        <div class="row">
+            <div class="form-group col-sm">
+                <input type="text" formControlName="ContactName" class="form-control" id="contactName"
+                    placeholder="Contact Name" required>
+            </div>
+            <div class="form-group col-sm">
+                <input type="date" formControlName="BirthDate" class="form-control" id="BirthDate"
+                    placeholder="Birth Date" required>
+            </div>
+            <div class="form-group col-sm">
+                <select class="form-select form-control select-chosen" formControlName="ContactTypeId" id="ContactTypeId"
+                    required>
+                    <option *ngFor="let option of contactTypes" value="{{option.id}}">{{option.description}}</option>
+                </select>
+            </div>
+            <div class="form-group col-sm">
+                <input type="text" formControlName="PhoneNumber" class="form-control" id="phoneNumber"
+                    placeholder="PhoneNumber" required>
+            </div>            
+        </div>
+        <button (click)="createContact()" style="margin-top: 10px;"
+        class="btn btn-danger float-right send" i18n="@@createContactButton">CREATE</button>
+    </div>
+</form>

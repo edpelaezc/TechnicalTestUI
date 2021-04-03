@@ -1,29 +1,40 @@
 <nav class="navbar navbar-light bg-light justify-content-between">
-    <div class="container">
-        <a class="navbar-brand title" i18n="@@contactsHeader">Contacts list</a>
+    <div class="container">        
+        <a class="navbar-brand title" i18n="@@contactsHeader">Contacts list</a>        
+        <button class="btn btn-secondary float-right" routerLink="/contacts/create" i18n="@@createRContactButton">CREATE CONTACT</button>
     </div>
 </nav>
 
 <div class="container mb-5" id="content">
-    <br>
-    <button class="btn btn-secondary float-right" routerLink="/contacts/create" i18n="@@createReservationButton">CREATE CONTACT</button>
+    <br>    
     <div class="table-responsive listTable">
         <br>
         <table datatable class="table table-bordered row-border hover" *ngIf="contacts.length > 0" style="margin-top: 1%;">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th i18n="@@contactTableTitle">contact</th>
+                    <th i18n="@@contactNameTH">Contact name</th>
+                    <th i18n="@@birthDateTH">Birth Date</th>
+                    <th i18n="@@contactTypeTH">Contact type</th>
+                    <th i18n="@@phoneNumberTH">Phone number</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let contact of contacts">
                     <td>{{contact.id}}</td>
-                    <td i18n="@@tableLabel">contact for: {{ contact.userName }}</td>
-                    <td><button class="btn btn-secondary" (click)="edit(contact.id)" i18n="@@editcontactButton">EDIT</button></td>
+                    <td i18n="@@contactNameTD">{{ contact.contactName }}</td>
+                    <td i18n="@@birthDateTD">{{ contact.birthDate }}</td>
+                    <td i18n="@@descriptionTD">{{ contact.description }}</td>
+                    <td i18n="@@phoneNumberTD">{{ contact.phoneNumber }}</td>
+                    <td><button class="btn btn-secondary" i18n="@@editcontactButton" routerLink="/contacts/edit/{{contact.id}}">EDIT</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
+
+<div class="container">
+    <a routerLink="/reservations" i18n="@@reservationButton">RESERVATION LIST</a>
+</div>
+

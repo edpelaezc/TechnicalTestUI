@@ -15,7 +15,7 @@ const routes: Routes = [
       { path: 'reservations/create', component: CreateComponent },
       { path: 'contacts/list', component: ContactsListComponent },
       { path: 'contacts/create', component: ContactsCreateComponent },
-      { path: 'contacts/edit', component: ContactsEditComponent }      
+      { path: 'contacts/edit/:id', component: ContactsEditComponent }      
     ]
   }
 ];
