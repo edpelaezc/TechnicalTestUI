@@ -42,6 +42,7 @@ export class ContactsCreateComponent implements OnInit {
 
   createContact() {
     if (this.form.status == "VALID") {
+      // create json object to send to api
       let contact = {
         ContactName: this.form.controls.ContactName.value,
         BirthDate: this.form.controls.BirthDate.value,

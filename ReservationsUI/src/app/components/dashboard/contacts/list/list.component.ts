@@ -13,6 +13,7 @@ export class ContactsListComponent implements OnInit {
   contacts:any = [];
 
   ngOnInit(): void {
+    // getting contacts to fill the datalist 
     this.getContacts();
   }
 
@@ -32,6 +33,7 @@ export class ContactsListComponent implements OnInit {
   }
 
   remove(id: string) {
+    // sending the id to remove in api 
     this.api.deleteContact(id).subscribe( res => {
       if (res.error) {
         alert('error');

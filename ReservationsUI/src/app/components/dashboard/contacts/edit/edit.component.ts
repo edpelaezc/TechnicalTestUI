@@ -25,7 +25,7 @@ export class ContactsEditComponent implements OnInit {
   contactTypes: any;
 
   ngOnInit(): void {
-    // getting the user
+    // getting the user and filling the form with saved values
     let Id = parseInt(this._ActivatedRoute.snapshot.paramMap.get("id"));
     this.api.getContact(Id).subscribe(res => {
       if (res.err) {
@@ -47,7 +47,9 @@ export class ContactsEditComponent implements OnInit {
   }
 
   submit() {
+    // check form status 
     if (this.form.status == "VALID") {        
+      // create json 
       let contact = {   
         id: this.form.controls.id.value.toString(),     
         ContactName: this.form.controls.contactName.value,
@@ -58,11 +60,13 @@ export class ContactsEditComponent implements OnInit {
 
       console.log(contact);
       
+      // using PUT to update the elemet
       this.api.putContact(contact, contact.id).subscribe(
         data => {  },
         err => { console.log(err) }
       );
 
+      // to refresh data table date
       alert('Sucessfully updated')
       this.router.navigateByUrl('contacts/list');
     }

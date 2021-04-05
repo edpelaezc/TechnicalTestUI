@@ -69,7 +69,8 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   // creates an object and send it to the api in json format
   createReservation() {
-    if (this.form.status == "VALID") {     
+    if (this.form.status == "VALID") {   
+      // getting id and name from datalist fields. 0 is the id and 1 is the name of the contact  
       let aux = [];
       if (this.form.controls.ContactName.value.includes('-')) {
         aux[0] = this.form.controls.ContactName.value.split('-')[0];
@@ -89,6 +90,7 @@ export class CreateComponent implements OnInit, OnDestroy {
         editorContent: this.form.controls.editorContent.value
       };
 
+      // sending the user, if it doesnt have an id, the api will create a new user with the provided fields
       this.api.postReservation(reservation).subscribe(
         data => {  },
         err => { console.log(err) }
