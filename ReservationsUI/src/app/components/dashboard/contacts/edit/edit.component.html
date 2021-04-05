@@ -1,5 +1,43 @@
 <nav class="navbar navbar-light bg-light justify-content-between">
     <div class="container">
         <a class="navbar-brand title" i18n="@@contactsHeader">Edit Contact</a>
+        <button class="btn btn-secondary" routerLink="/contacts/list" i18n="@@CONTACTSLISTButton">CONTACTS LIST</button>
     </div>
 </nav>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="container mb-5" id="content">
+        <br>
+        <input type="hidden" formControlName="id">        
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label i18n="@@ECContactName">Contact Name</label>
+                <input type="text" formControlName="contactName" class="form-control" id="contactName"
+                    placeholder="Contact Name" value="" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label i18n="@@ECBirthDate">Birth Date</label>
+                <input type="date" formControlName="birthDate" class="form-control" id="BirthDate"
+                    placeholder="Birth Date" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label i18n="@@ECType">Type</label>
+                <select class="form-select form-control select-chosen" formControlName="types" id="types" required>
+                    <option *ngFor="let option of contactTypes" value="{{option.Id}}">{{option.Description}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label i18n="@@ECPhone">PhoneNumber</label>
+                <input type="text" formControlName="phoneNumber" class="form-control" id="phoneNumber" required>
+            </div>
+        </div>
+        <button type="submit" style="margin-top: 10px;" class="btn btn-danger float-right send"
+            i18n="@@createContactButton">CONFIRM</button>
+    </div>
+</form>

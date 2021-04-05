@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,33 +16,58 @@ export class ContactsEditComponent implements OnInit {
       id: ['', [Validators.required]],
       contactName: ['', [Validators.required]],
       birthDate: [''],
-      phoneNumber: ['', [Validators.required]],      
+      phoneNumber: ['', [Validators.required]],
       types: ['', [Validators.required]]
     });
   }
-  
-  contact: any;
+
   form: FormGroup;
-  contactTypes:any;
+  contactTypes: any;
 
-  ngOnInit(): void {      
+  ngOnInit(): void {
     // getting the user
-    this.getContact();
-    console.log(this.contact);     
-    console.log(this.contactTypes);
-    
-  }
-
-  getContact() {
     let Id = parseInt(this._ActivatedRoute.snapshot.paramMap.get("id"));
     this.api.getContact(Id).subscribe(res => {
       if (res.err) {
         alert('not found');
       }
-      else {              
-        this.contact = res;
+      else {
+        this.contactTypes = JSON.parse(res.types);        
+
+        this.form.patchValue({
+          id: res.id,
+          contactName: res.contactName,
+          birthDate: formatDate(res.birthDate, 'yyyy-MM-dd', 'en-US'),
+          phoneNumber: res.phoneNumber,
+          types: this.contactTypes[0].Id
+        })
       }
     });
+
   }
 
+  submit() {
+    if (this.form.status == "VALID") {        
+      let contact = {   
+        id: this.form.controls.id.value.toString(),     
+        ContactName: this.form.controls.contactName.value,
+        BirthDate: this.form.controls.birthDate.value,
+        ContactTypeId: this.form.controls.types.value.toString(),
+        PhoneNumber: this.form.controls.phoneNumber.value
+      }
+
+      console.log(contact);
+      
+      this.api.putContact(contact, contact.id).subscribe(
+        data => {  },
+        err => { console.log(err) }
+      );
+
+      alert('Sucessfully updated')
+      this.router.navigateByUrl('contacts/list');
+    }
+    else {
+      alert('Incorrect values');
+    }
+  }
 }

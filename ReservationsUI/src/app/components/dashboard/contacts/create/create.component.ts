@@ -17,8 +17,8 @@ export class ContactsCreateComponent implements OnInit {
     this.form = this.fb.group({
       ContactName: ['', [Validators.required]],
       BirthDate: ['', [Validators.required]],
-      ContactTypeId: [''],
-      PhoneNumber: ['', [Validators.required]]
+      ContactTypeId: ['', [Validators.required]],
+      PhoneNumber: ['']
     });
   }
 
@@ -41,18 +41,24 @@ export class ContactsCreateComponent implements OnInit {
   }
 
   createContact() {
-    let contact = {
-      ContactName: this.form.controls.ContactName.value,
-      BirthDate: this.form.controls.BirthDate.value,
-      ContactTypeId: this.form.controls.ContactTypeId.value,
-      PhoneNumber: this.form.controls.PhoneNumber.value
+    if (this.form.status == "VALID") {
+      let contact = {
+        ContactName: this.form.controls.ContactName.value,
+        BirthDate: this.form.controls.BirthDate.value,
+        ContactTypeId: this.form.controls.ContactTypeId.value,
+        PhoneNumber: this.form.controls.PhoneNumber.value
+      }
+
+      this.api.postContact(contact).subscribe(
+        data => {  },
+        err => { console.log(err) }
+      );
+
+      alert('Sucessfully created')
+      this.router.navigateByUrl('contacts/list');
+    } 
+    else {
+      alert('Fill all the fields!');
     }
-
-    this.api.postContact(contact).subscribe(
-      data => { alert('Sucessfully created') },
-      err => { console.log(err) }
-    );
-
-    this.router.navigateByUrl('contacts/list');
   }
 }

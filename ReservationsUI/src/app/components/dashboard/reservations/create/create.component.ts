@@ -31,7 +31,7 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getTypes();
-    this.getContacts();    
+    this.getContacts();
     this.editor = new Editor();
   }
 
@@ -69,33 +69,56 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   // creates an object and send it to the api in json format
   createReservation() {
-    let reservation = {
-      ContactID: this.form.controls.ContactName.value,      
-      ContactName: $('#contactType').text(),
-      ContactType: this.form.controls.ContactType.value,
-      Phone: this.form.controls.Phone.value,
-      BirthDate: this.form.controls.BirthDate.value,
-      editorContent: this.form.controls.editorContent.value
-    };
-    
-    this.api.postReservation(reservation).subscribe(
-      data => { alert('Sucessfully created') },
-      err => { console.log(err) }
-    );
+    if (this.form.status == "VALID") {     
+      let aux = [];
+      if (this.form.controls.ContactName.value.includes('-')) {
+        aux[0] = this.form.controls.ContactName.value.split('-')[0];
+        aux[1] = this.form.controls.ContactName.value.split('-')[1];
+      } 
+      else {
+        aux[0] = "-1";
+        aux[1] = this.form.controls.ContactName.value.split('-')[0];
+      }     
+      
+      let reservation = {
+        ContactID: aux[0],
+        ContactName: aux[1],
+        ContactType: this.form.controls.ContactType.value,
+        Phone: this.form.controls.Phone.value,
+        BirthDate: this.form.controls.BirthDate.value,
+        editorContent: this.form.controls.editorContent.value
+      };
 
-    this.router.navigateByUrl('reservations');
+      this.api.postReservation(reservation).subscribe(
+        data => { alert('Sucessfully created') },
+        err => { console.log(err) }
+      );
+
+      this.router.navigateByUrl('reservations');
+    }
+    else {
+      alert('Fill all the fields!');
+    }
   }
 
   // using jquery to fill the related fields of the contact
-  autofill() {    
-    let contact = this.form.controls.ContactName.value;
-    let obj:any;
+  autofill() {
+    let contact = this.form.controls.ContactName.value.split('-')[0];    
+    let obj: any;
     this.contacts.forEach((element: { id: any; }) => {
       if (element.id == contact) {
         obj = element;
-      }      
-    });    
-    
+      }
+    });
+    console.log(obj);
+
+    this.form.patchValue({
+      ContactName: obj.id+'-'+obj.contactName,
+      Phone: obj.phoneNumber,
+      BirthDate: formatDate(obj.birthDate, 'yyyy-MM-dd', 'en-US'),
+      ContactType: obj.contactTypeId.toString()
+    });
+    $(`#contactName option[value='${obj.id}']`).prop('selected', true);
     $(`#contactType option[value='${obj.contactTypeId}']`).prop('selected', true);
     $('#phone').val(obj.phoneNumber);
     $('#birthDate').val(formatDate(obj.birthDate, 'yyyy-MM-dd', 'en-US'));

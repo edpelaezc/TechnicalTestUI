@@ -69,4 +69,8 @@ export class ContactsService {
   postContact(contact: any): Observable<any> {
     return this.httpClient.post(environment.apiURL + '/contacts', JSON.stringify(contact), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }).pipe(catchError(this.handleError));
   }
+
+  putContact(contact: any, id: any): Observable<any> {
+    return this.httpClient.put(environment.apiURL + `/contacts/${id}`, JSON.stringify(contact), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }).pipe(catchError(this.handleError));
+  }
 }
