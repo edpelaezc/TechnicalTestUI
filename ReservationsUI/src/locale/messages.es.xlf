@@ -1,7 +1,244 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<xliff version="1.2"
+  xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="contactsHeader" datatype="html">
+        <source>Create Contact</source>
+        <target>Crear contacto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/create/create.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/edit/edit.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CONTACTSLISTButton" datatype="html">
+        <source>CONTACTS LIST</source>
+        <target>LISTA DE CONTACTOS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/create/create.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/edit/edit.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CFContactName" datatype="html">
+        <source>Contact name</source>
+        <target>Nombre de contacto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/create/create.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CFBirthDate" datatype="html">
+        <source>Birth Date</source>
+        <target>Fecha nacimiento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/create/create.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CFContactType" datatype="html">
+        <source>Contact Type</source>
+        <target>Tipo de contacto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/create/create.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CFPhoneNumber" datatype="html">
+        <source>Phone Number</source>
+        <target>Número de teléfono</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/create/create.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="createContactButton" datatype="html">
+        <source>CREATE</source>
+        <target>CREAR</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/create/create.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/edit/edit.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ECContactName" datatype="html">
+        <source>Contact Name</source>
+        <target>Nombre de contacto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/edit/edit.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ECBirthDate" datatype="html">
+        <source>Birth Date</source>
+        <target>Fecha nacimiento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/edit/edit.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ECType" datatype="html">
+        <source>Type</source>
+        <target>Tipo de contacto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/edit/edit.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ECPhone" datatype="html">
+        <source>PhoneNumber</source>
+        <target>Número de teléfono</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/edit/edit.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="createRContactButton" datatype="html">
+        <source>CREATE CONTACT</source>
+        <target>CREAR CONTACTO</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactNameTH" datatype="html">
+        <source>Contact name</source>
+        <target>Nombre de contacto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="birthDateTH" datatype="html">
+        <source>Birth Date</source>
+        <target>Fecha nacimiento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactTypeTH" datatype="html">
+        <source>Contact type</source>
+        <target>Tipo de contacto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="phoneNumberTH" datatype="html">
+        <source>Phone number</source>
+        <target>Número de teléfono</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="actions" datatype="html">
+        <source>Actions</source>
+        <target>Acciones</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="contactNameTD" datatype="html">
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{ contact.contactName }}"/>
+        </source>
+        <target>
+          <x id="INTERPOLATION" equiv-text="{{ contact.contactName }}"/>
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="phoneNumberTD" datatype="html">
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{ contact.phoneNumber }}"/>
+        </source>
+        <target>
+          <x id="INTERPOLATION" equiv-text="{{ contact.phoneNumber }}"/>
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="birthDateTD" datatype="html">
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{ contact.birthDate }}"/>
+        </source>
+        <target>
+          <x id="INTERPOLATION" equiv-text="{{ contact.birthDate }}"/>
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="descriptionTD" datatype="html">
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{ contact.description }}"/>
+        </source>
+        <target>
+          <x id="INTERPOLATION" equiv-text="{{ contact.description }}"/>
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="editcontactButton" datatype="html">
+        <source>EDIT</source>
+        <target>EDITAR</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="removecontactButton" datatype="html">
+        <source>DELETE</source>
+        <target>ELIMINAR</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reservationButton" datatype="html">
+        <source>RESERVATION LIST</source>
+        <target>LISTA DE RESERVACIONES</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/create/create.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/create/create.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reservationButtonXD" datatype="html">
+        <source>RESERVATION LIST</source>
+        <target>LISTA DE CONTACTOS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="createHeader" datatype="html">
         <source>Create Reservation</source>
         <target>Crear reservación</target>
@@ -10,12 +247,36 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="reservationButton" datatype="html">
-        <source>RESERVATION LIST</source>
-        <target>RESERVACIONES</target>
+      <trans-unit id="RFContactName" datatype="html">
+        <source>Contact name</source>
+        <target>Nombre de contacto</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/reservations/create/create.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="RFContactType" datatype="html">
+        <source>Contact Type</source>
+        <target>Tipo de contacto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/create/create.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="RFPhoneNumber" datatype="html">
+        <source>Phone Number</source>
+        <target>Número de teléfono</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/create/create.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="RFBirthDate" datatype="html">
+        <source>Birth Date</source>
+        <target>Fecha nacimiento</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/create/create.component.html</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sendReservationButton" datatype="html">
@@ -23,12 +284,12 @@
         <target>ENVIAR</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/reservations/create/create.component.html</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="listHeader" datatype="html">
         <source>Reservations list</source>
-        <target>Lista de Reservaciones</target>
+        <target>Lista de reservaciones</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/reservations/list/list.component.html</context>
           <context context-type="linenumber">3</context>
@@ -51,8 +312,10 @@
         </context-group>
       </trans-unit>
       <trans-unit id="tableLabel" datatype="html">
-        <source>Reservation for: <x id="INTERPOLATION" equiv-text="{{ reservation.userName }}"/></source>
-        <target>Reservación para: <x id="INTERPOLATION" equiv-text="{{ reservation.userName }}"/></target>
+        <source>Reservation for: <x id="INTERPOLATION" equiv-text="{{ reservation.userName }}"/>
+        </source>
+        <target>Reservación para: <x id="INTERPOLATION" equiv-text="{{ reservation.userName }}"/>
+        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/reservations/list/list.component.html</context>
           <context context-type="linenumber">22</context>
