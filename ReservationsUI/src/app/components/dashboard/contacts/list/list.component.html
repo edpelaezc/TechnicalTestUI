@@ -9,25 +9,28 @@
     <br>    
     <div class="table-responsive listTable">
         <br>
-        <table datatable class="table table-bordered row-border hover" *ngIf="contacts.length > 0" style="margin-top: 1%;">
+        <table datatable class="table table-bordered row-border hover text-center" *ngIf="contacts.length > 0" style="margin-top: 1%;">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>ID</th>
                     <th i18n="@@contactNameTH">Contact name</th>
                     <th i18n="@@birthDateTH">Birth Date</th>
                     <th i18n="@@contactTypeTH">Contact type</th>
                     <th i18n="@@phoneNumberTH">Phone number</th>
-                    <th></th>
+                    <th i18n="@@actions">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let contact of contacts">
                     <td>{{contact.id}}</td>
                     <td i18n="@@contactNameTD">{{ contact.contactName }}</td>
-                    <td i18n="@@birthDateTD">{{ contact.birthDate }}</td>
-                    <td i18n="@@descriptionTD">{{ contact.description }}</td>
                     <td i18n="@@phoneNumberTD">{{ contact.phoneNumber }}</td>
-                    <td><button class="btn btn-secondary" i18n="@@editcontactButton" routerLink="/contacts/edit/{{contact.id}}">EDIT</button></td>
+                    <td i18n="@@birthDateTD">{{ contact.birthDate }}</td>
+                    <td i18n="@@descriptionTD">{{ contact.description }}</td>                    
+                    <td>
+                        <button class="btn btn-secondary" i18n="@@editcontactButton" routerLink="/contacts/edit/{{contact.id}}">EDIT</button>                        
+                        <button class="btn btn-danger" style="margin-left: 4%;" i18n="@@removecontactButton" (click)="remove(contact.id)">DELETE</button>             
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -35,6 +38,6 @@
 </div>
 
 <div class="container">
-    <a routerLink="/reservations" i18n="@@reservationButton">RESERVATION LIST</a>
+    <a routerLink="/reservations" class="btn btn-secondary" i18n="@@reservationButton">RESERVATION LIST</a>
 </div>
 

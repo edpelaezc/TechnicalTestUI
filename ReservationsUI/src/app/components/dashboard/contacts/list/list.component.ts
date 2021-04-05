@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactsService } from "../../../../services/contacts/contacts.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -8,7 +9,7 @@ import { ContactsService } from "../../../../services/contacts/contacts.service"
 })
 export class ContactsListComponent implements OnInit {
 
-  constructor(private api: ContactsService) { }
+  constructor(private api: ContactsService, private router: Router) { }
   contacts:any = [];
 
   ngOnInit(): void {
@@ -28,6 +29,20 @@ export class ContactsListComponent implements OnInit {
         }
       }
     });
+  }
+
+  remove(id: string) {
+    this.api.deleteContact(id).subscribe( res => {
+      if (res.error) {
+        alert('error');
+      } 
+      else {
+        alert('Deleted contact');
+        this.contacts = [];
+        this.getContacts();
+      }
+    }
+    );    
   }
 
 }

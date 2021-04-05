@@ -90,10 +90,11 @@ export class CreateComponent implements OnInit, OnDestroy {
       };
 
       this.api.postReservation(reservation).subscribe(
-        data => { alert('Sucessfully created') },
+        data => {  },
         err => { console.log(err) }
       );
 
+      alert('Sucessfully created')
       this.router.navigateByUrl('reservations');
     }
     else {
