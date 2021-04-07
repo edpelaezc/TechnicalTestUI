@@ -33,5 +33,20 @@ export class ListComponent implements OnInit {
     });    
   }
 
+  remove(id: string) {
+    // sending the id to remove in api 
+    this.api.deleteReservation(id).subscribe( res => {
+      if (res.error) {
+        alert('error');
+      } 
+      else {
+        alert('Deleted reserveation');
+        this.reservations = [];
+        this.getReservations();
+      }
+    }
+    );    
+  }
+
 }
 

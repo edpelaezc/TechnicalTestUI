@@ -20,7 +20,10 @@
                 <tr *ngFor="let reservation of reservations">
                     <td>{{reservation.id}}</td>
                     <td i18n="@@tableLabel">Reservation for: {{ reservation.userName }}</td>
-                    <td><button class="btn btn-secondary" (click)="edit(reservation.id)" i18n="@@editReservationButton">EDIT</button></td>
+                    <td>
+                        <button class="btn btn-secondary" routerLink="/reservations/edit/{{reservation.id}}" i18n="@@editReservationButton">EDIT</button>
+                        <button class="btn btn-danger" style="margin-left: 4%;" i18n="@@removeReservationButton" (click)="remove(reservation.id)">DELETE</button>             
+                    </td>
                 </tr>
             </tbody>
         </table>

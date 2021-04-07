@@ -39,6 +39,19 @@ export class ReservationsService {
     );
   }
 
+  getReservation(id: number): Observable<any> {
+    return this.httpClient.get(`${environment.apiURL}/Reservations/${id}`).pipe(
+      tap(res => {
+        if (res) {
+          return res;
+        }
+        else {
+          return { error: 'error' }
+        }
+      })
+    );
+  }
+
   // gets the contacts to autocomplete information based on contact id
   getContactsList(): Observable<any> {
     return this.httpClient.get(`${environment.apiURL}/contacts`).pipe(
@@ -67,8 +80,17 @@ export class ReservationsService {
     );
   }
 
+  // edit the reservation
+  putReservation(reservation: any, id: any): Observable<any> {
+    return this.httpClient.put(environment.apiURL + `/reservations/${id}`, JSON.stringify(reservation), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }).pipe(catchError(this.handleError));
+  }
+
   // creates a reservation
   postReservation(reservation: any): Observable<any> {    
     return this.httpClient.post(environment.apiURL + '/reservations', JSON.stringify(reservation), { headers: new HttpHeaders({ 'Content-Type': 'application/json' })}).pipe(catchError(this.handleError));
+  }
+
+  deleteReservation(id: string): Observable<any> {
+    return this.httpClient.delete(environment.apiURL + `/reservations/${id}`).pipe(catchError(this.handleError));
   }
 }

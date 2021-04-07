@@ -11,10 +11,11 @@ import { DataTablesModule } from 'angular-datatables';
 import { ContactsEditComponent } from './contacts/edit/edit.component';
 import { ContactsCreateComponent } from "./contacts/create/create.component";
 import { ContactsListComponent } from "./contacts/list/list.component";
+import { EditComponent } from './reservations/edit/edit.component';
 
 
 @NgModule({
-  declarations: [LayoutComponent, ListComponent, CreateComponent, ContactsEditComponent, ContactsCreateComponent, ContactsListComponent],
+  declarations: [LayoutComponent, ListComponent, CreateComponent, ContactsEditComponent, ContactsCreateComponent, ContactsListComponent, EditComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
