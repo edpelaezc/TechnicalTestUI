@@ -10,18 +10,16 @@ import { HttpClient } from '@angular/common/http';
 export class ListComponent implements OnInit {
 
   constructor(private api: ReservationsService, private http: HttpClient) { }
-  
-  reservations:any = [];
+
+  reservations: any = [];
 
   ngOnInit(): void {
-    this.getReservations();    
+    this.getReservations();
   }
-
-  edit(id:string) {}
 
   // gets the reservations list to use in page load
   getReservations() {
-    this.api.getReservationsList().subscribe( res => {
+    this.api.getReservationsList().subscribe(res => {
       if (res.error) {
         alert('error');
       }
@@ -30,22 +28,21 @@ export class ListComponent implements OnInit {
           this.reservations.push(res[index]);
         }
       }
-    });    
+    });
   }
 
   remove(id: string) {
     // sending the id to remove in api 
-    this.api.deleteReservation(id).subscribe( res => {
-      if (res.error) {
-        alert('error');
-      } 
-      else {
-        alert('Deleted reserveation');
+    this.api.deleteReservation(id).subscribe(res => {
+      if(res == 200) {
+        alert('Deleted reservation');
         this.reservations = [];
         this.getReservations();
+      } else {
+        alert('error');
       }
     }
-    );    
+    );
   }
 
 }
