@@ -19,6 +19,14 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="editRHeader" datatype="html">
+        <source>Edit Reservation</source>
+        <target>Editar Reservación</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/edit</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="CONTACTSLISTButton" datatype="html">
         <source>CONTACTS LIST</source>
         <target>LISTA DE CONTACTOS</target>
@@ -128,7 +136,7 @@
         <target>Fecha nacimiento</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactTypeTH" datatype="html">
@@ -136,7 +144,7 @@
         <target>Tipo de contacto</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="phoneNumberTH" datatype="html">
@@ -144,7 +152,7 @@
         <target>Número de teléfono</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="actions" datatype="html">

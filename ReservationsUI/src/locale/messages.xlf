@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<xliff version="1.2"
+  xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="contactsHeader" datatype="html">
@@ -14,6 +15,13 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="editRHeader" datatype="html">
+        <source>Edit Reservation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dashboard/reservations/edit</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
@@ -138,28 +146,36 @@
         </context-group>
       </trans-unit>
       <trans-unit id="contactNameTD" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ contact.contactName }}"/></source>
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{ contact.contactName }}"/>
+        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="phoneNumberTD" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ contact.phoneNumber }}"/></source>
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{ contact.phoneNumber }}"/>
+        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
           <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="birthDateTD" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ contact.birthDate }}"/></source>
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{ contact.birthDate }}"/>
+        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="descriptionTD" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ contact.description }}"/></source>
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{ contact.description }}"/>
+        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/contacts/list/list.component.html</context>
           <context context-type="linenumber">29</context>
@@ -258,7 +274,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="tableLabel" datatype="html">
-        <source>Reservation for: <x id="INTERPOLATION" equiv-text="{{ reservation.userName }}"/></source>
+        <source>Reservation for: <x id="INTERPOLATION" equiv-text="{{ reservation.userName }}"/>
+        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/reservations/list/list.component.html</context>
           <context context-type="linenumber">22</context>
