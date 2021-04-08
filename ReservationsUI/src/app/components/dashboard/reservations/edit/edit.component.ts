@@ -15,9 +15,10 @@ export class EditComponent implements OnInit {
 
   form: FormGroup;
   editor: Editor;
-  contactTypes:any;
+  contactTypes: any;
   contacts: any = [];
   html: '';
+  today: string;
 
   constructor(private fb: FormBuilder, private api: ReservationsService, private _ActivatedRoute: ActivatedRoute, private router: Router) {
     this.form = this.fb.group({
@@ -32,6 +33,8 @@ export class EditComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // setting the max value for birthdate
+    this.today = formatDate(new Date(), 'yyyy-MM-dd', 'en-US');
     this.editor = new Editor();
     this.getReservation();
   }
@@ -40,36 +43,36 @@ export class EditComponent implements OnInit {
     this.editor.destroy();
   }
 
-  editReservation() { 
-        // check form status 
-        if (this.form.status == "VALID") {        
-          // create json 
-          let reservation = {   
-            Id: this.form.controls.id.value,     
-            ContactId: this.form.controls.ContactId.value,
-            Description: this.form.controls.editorContent.value,
-            BirthDate: formatDate(this.form.controls.BirthDate.value, 'yyyy-MM-dd', 'en-US'),
-            ContactTypeId: this.form.controls.ContactType.value,
-            PhoneNumber: this.form.controls.Phone.value,
-            ContactName: this.form.controls.ContactName.value,
-            ContactType: $('#contactType').text()
-          }
-    
-          console.log(reservation);
-          
-          // using PUT to update the elemet
-          this.api.putReservation(reservation, reservation.Id).subscribe(
-            data => {  },
-            err => { console.log(err) }
-          );
-    
-          // to refresh data table date
-          alert('Sucessfully updated')
-          this.router.navigateByUrl('reservations');
-        }
-        else {
-          alert('Incorrect values');
-        }
+  editReservation() {
+    // check form status 
+    if (this.form.status == "VALID") {
+      // create json 
+      let reservation = {
+        Id: this.form.controls.id.value,
+        ContactId: this.form.controls.ContactId.value,
+        Description: this.form.controls.editorContent.value,
+        BirthDate: formatDate(this.form.controls.BirthDate.value, 'yyyy-MM-dd', 'en-US'),
+        ContactTypeId: this.form.controls.ContactType.value,
+        PhoneNumber: this.form.controls.Phone.value,
+        ContactName: this.form.controls.ContactName.value,
+        ContactType: $('#contactType').text()
+      }
+
+      console.log(reservation);
+
+      // using PUT to update the elemet
+      this.api.putReservation(reservation, reservation.Id).subscribe(
+        data => { },
+        err => { console.log(err) }
+      );
+
+      // to refresh data table date
+      alert('Sucessfully updated')
+      this.router.navigateByUrl('reservations');
+    }
+    else {
+      alert('Incorrect or missing values!');
+    }
   }
 
   // get the reservation and populate the form fields of contact info
@@ -86,8 +89,8 @@ export class EditComponent implements OnInit {
         this.contactTypes = {
           id: res.contactTypeId,
           type: res.contactType
-        }        
-        
+        }
+
         // filling the form 
         this.form.patchValue({
           id: res.id,

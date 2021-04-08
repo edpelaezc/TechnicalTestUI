@@ -24,12 +24,12 @@
             </div>
             <div class="form-group col-sm">
                 <label i18n="@@RFPhoneNumber">Phone Number</label>
-                <input type="text" formControlName="Phone" class="form-control" id="phone" readonly>
+                <input type="tel" pattern="[0-9]*" formControlName="Phone" class="form-control" id="phone" readonly>
             </div>
             <div class="form-group col-sm">
                 <label i18n="@@RFBirthDate">Birth Date</label>
                 <input type="date" formControlName="BirthDate" class="form-control" id="birthDate"
-                    placeholder="Birth date" required readonly>
+                    placeholder="Birth date" max="{{today}}" required readonly>
             </div>
         </div>
     </div>

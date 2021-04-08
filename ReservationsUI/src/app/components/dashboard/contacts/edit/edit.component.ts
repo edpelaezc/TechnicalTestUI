@@ -22,9 +22,12 @@ export class ContactsEditComponent implements OnInit {
   }
 
   form: FormGroup;
+  today: string;
   contactTypes: any;
 
   ngOnInit(): void {
+    // set the date max value
+    this.today = formatDate(new Date(), 'yyyy-MM-dd', 'en-US');
     // getting the user and filling the form with saved values
     let Id = parseInt(this._ActivatedRoute.snapshot.paramMap.get("id"));
     this.api.getContact(Id).subscribe(res => {
@@ -71,7 +74,7 @@ export class ContactsEditComponent implements OnInit {
       this.router.navigateByUrl('contacts/list');
     }
     else {
-      alert('Incorrect values');
+      alert('Incorrect or missing values!');
     }
   }
 }

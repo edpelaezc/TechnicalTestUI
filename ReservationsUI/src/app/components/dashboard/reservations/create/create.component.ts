@@ -18,6 +18,7 @@ export class CreateComponent implements OnInit, OnDestroy {
   contactTypes: any = [];
   contacts: any = [];
   html: '';
+  today: string;
 
   constructor(private fb: FormBuilder, private api: ReservationsService, private router: Router) {
     this.form = this.fb.group({
@@ -30,6 +31,8 @@ export class CreateComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    // setting the max value for birthdate
+    this.today = formatDate(new Date(), 'yyyy-MM-dd', 'en-US');
     this.getTypes();
     this.getContacts();
     this.editor = new Editor();
@@ -100,7 +103,7 @@ export class CreateComponent implements OnInit, OnDestroy {
       this.router.navigateByUrl('reservations');
     }
     else {
-      alert('Fill all the fields!');
+      alert('Incorrect or missing values!');
     }
   }
 

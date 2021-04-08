@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactsService } from "../../../../services/contacts/contacts.service";
 import { Router } from '@angular/router';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-create',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 export class ContactsCreateComponent implements OnInit {
 
   form: FormGroup;
+  today: string;
   contactTypes: any = [];
 
   constructor(private fb: FormBuilder, private api: ContactsService, private router: Router) {
@@ -23,6 +25,7 @@ export class ContactsCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.today = formatDate(new Date(), 'yyyy-MM-dd', 'en-US');
     this.getTypes();
   }
 
@@ -59,7 +62,7 @@ export class ContactsCreateComponent implements OnInit {
       this.router.navigateByUrl('contacts/list');
     } 
     else {
-      alert('Fill all the fields!');
+      alert('Incorrect or missing values!');
     }
   }
 }
